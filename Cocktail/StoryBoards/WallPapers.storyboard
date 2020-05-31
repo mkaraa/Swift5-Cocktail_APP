@@ -70,7 +70,7 @@
         <scene sceneID="III-YA-07b">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="FsG-1e-FJf" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item 1" id="Vek-xd-6Wi"/>
+                    <tabBarItem key="tabBarItem" title="Item 1" image="arrow.down.doc" catalog="system" id="Vek-xd-6Wi"/>
                     <toolbarItems/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="aQk-qM-rzJ">
@@ -87,4 +87,7 @@
             <point key="canvasLocation" x="3456.521739130435" y="-1793.3035714285713"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="arrow.down.doc" catalog="system" width="115" height="128"/>
+    </resources>
 </document>

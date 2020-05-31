@@ -4,142 +4,9 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
-        <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Cocktails-->
-        <scene sceneID="ZUI-Ic-Eew">
-            <objects>
-                <viewController id="gmw-fK-gcK" customClass="CocktailsVC" customModule="Cocktail" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="ee5-Pg-hq3">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="8R2-2J-xcO">
-                                <rect key="frame" x="5" y="93" width="404" height="764"/>
-                                <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="G4d-o3-SWZ">
-                                        <rect key="frame" x="0.0" y="0.0" width="404" height="251.5"/>
-                                        <subviews>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Il7-eR-hne">
-                                                <rect key="frame" x="0.0" y="0.0" width="404" height="251.5"/>
-                                            </imageView>
-                                        </subviews>
-                                    </stackView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="1qH-Jk-Yy2">
-                                        <rect key="frame" x="0.0" y="256.5" width="404" height="251"/>
-                                        <subviews>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="NjD-Co-89c">
-                                                <rect key="frame" x="0.0" y="0.0" width="404" height="251"/>
-                                            </imageView>
-                                        </subviews>
-                                    </stackView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="ojb-5r-rKs">
-                                        <rect key="frame" x="0.0" y="512.5" width="404" height="251.5"/>
-                                        <subviews>
-                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="CAQ-q2-R6c">
-                                                <rect key="frame" x="0.0" y="0.0" width="404" height="251.5"/>
-                                                <subviews>
-                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ZHk-EG-mYg">
-                                                        <rect key="frame" x="0.0" y="0.0" width="100.5" height="251.5"/>
-                                                    </imageView>
-                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="izc-5g-EWi">
-                                                        <rect key="frame" x="101.5" y="0.0" width="100" height="251.5"/>
-                                                    </imageView>
-                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="S1r-tK-rNE">
-                                                        <rect key="frame" x="202.5" y="0.0" width="100.5" height="251.5"/>
-                                                    </imageView>
-                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="IiJ-J9-0fJ">
-                                                        <rect key="frame" x="304" y="0.0" width="100" height="251.5"/>
-                                                    </imageView>
-                                                </subviews>
-                                            </stackView>
-                                        </subviews>
-                                    </stackView>
-                                </subviews>
-                            </stackView>
-                        </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                        <constraints>
-                            <constraint firstItem="Y7P-WR-Byo" firstAttribute="trailing" secondItem="8R2-2J-xcO" secondAttribute="trailing" constant="5" id="HwL-4N-MnE"/>
-                            <constraint firstItem="Y7P-WR-Byo" firstAttribute="bottom" secondItem="8R2-2J-xcO" secondAttribute="bottom" constant="5" id="QuJ-pj-mH6"/>
-                            <constraint firstItem="8R2-2J-xcO" firstAttribute="top" secondItem="Y7P-WR-Byo" secondAttribute="top" constant="5" id="bSf-kQ-bJx"/>
-                            <constraint firstItem="8R2-2J-xcO" firstAttribute="leading" secondItem="Y7P-WR-Byo" secondAttribute="leading" constant="5" id="gkI-UQ-sPX"/>
-                        </constraints>
-                        <viewLayoutGuide key="safeArea" id="Y7P-WR-Byo"/>
-                    </view>
-                    <navigationItem key="navigationItem" title="Cocktails" id="lSb-sx-GdP"/>
-                    <connections>
-                        <segue destination="KPL-xL-Gc0" kind="show" id="Uon-pb-u5R"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="2Py-6q-uLZ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="873.91304347826099" y="-34.151785714285715"/>
-        </scene>
-        <!--Title-->
-        <scene sceneID="qpm-ad-BQO">
-            <objects>
-                <viewController id="KPL-xL-Gc0" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="21g-xS-cuq">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="eCp-EF-8MA">
-                                <rect key="frame" x="5" y="93" width="404" height="764"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="h67-aa-4XC">
-                                    <size key="itemSize" width="128" height="128"/>
-                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
-                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                </collectionViewFlowLayout>
-                                <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="oDW-sD-ZbF">
-                                        <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="Ykq-h4-5Db">
-                                            <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                        </collectionViewCellContentView>
-                                    </collectionViewCell>
-                                </cells>
-                            </collectionView>
-                        </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                        <constraints>
-                            <constraint firstItem="mFK-kd-ORE" firstAttribute="trailing" secondItem="eCp-EF-8MA" secondAttribute="trailing" constant="5" id="0IJ-xa-9oY"/>
-                            <constraint firstItem="mFK-kd-ORE" firstAttribute="bottom" secondItem="eCp-EF-8MA" secondAttribute="bottom" constant="5" id="Brs-qd-whd"/>
-                            <constraint firstItem="eCp-EF-8MA" firstAttribute="top" secondItem="mFK-kd-ORE" secondAttribute="top" constant="5" id="Jd5-nv-bdg"/>
-                            <constraint firstItem="eCp-EF-8MA" firstAttribute="leading" secondItem="mFK-kd-ORE" secondAttribute="leading" constant="5" id="Qle-fA-Ozn"/>
-                        </constraints>
-                        <viewLayoutGuide key="safeArea" id="mFK-kd-ORE"/>
-                    </view>
-                    <navigationItem key="navigationItem" title="Title" id="gbT-wZ-nl5"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="0rg-bH-7ug" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1894" y="-34"/>
-        </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="JD9-wp-YZS">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="uJp-qT-obW" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="nlP-Vf-H9y">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="gmw-fK-gcK" kind="relationship" relationship="rootViewController" id="xlM-Z7-myo"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="1i9-c3-IvN" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-36.231884057971016" y="-34.151785714285715"/>
-        </scene>
         <!--View Controller-->
         <scene sceneID="dGf-OZ-kaT">
             <objects>
@@ -163,13 +30,13 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DI4-sf-8CJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4366.666666666667" y="-1793.3035714285713"/>
+            <point key="canvasLocation" x="1016" y="-491"/>
         </scene>
         <!--Item 1-->
         <scene sceneID="w9Z-K4-eHi">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="GfG-mr-q2c" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item 1" id="FzJ-fO-RpB"/>
+                    <tabBarItem key="tabBarItem" title="Item 1" image="square.and.pencil" catalog="system" id="FzJ-fO-RpB"/>
                     <toolbarItems/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="nao-Nc-ZDc">
@@ -183,7 +50,10 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="S56-Vz-1HB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3456.521739130435" y="-1793.3035714285713"/>
+            <point key="canvasLocation" x="106" y="-491"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="square.and.pencil" catalog="system" width="128" height="118"/>
+    </resources>
 </document>
