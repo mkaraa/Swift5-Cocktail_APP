@@ -3,10 +3,13 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		838F82042483F75E00A23AF3 /* Cocktail.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 838F82032483F75E00A23AF3 /* Cocktail.storyboard */; };
+		838F82072483F78B00A23AF3 /* WallPapers.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 838F82062483F78B00A23AF3 /* WallPapers.storyboard */; };
+		838F82092483F79700A23AF3 /* Favorites.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 838F82082483F79700A23AF3 /* Favorites.storyboard */; };
 		83C0B4C22483DF5500EFA84A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83C0B4C12483DF5500EFA84A /* AppDelegate.swift */; };
 		83C0B4C42483DF5500EFA84A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83C0B4C32483DF5500EFA84A /* SceneDelegate.swift */; };
 		83C0B4C62483DF5500EFA84A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83C0B4C52483DF5500EFA84A /* ViewController.swift */; };
@@ -19,6 +22,9 @@
 
 /* Begin PBXFileReference section */
 		2745D23F33A5E34FF0EC9BE8 /* Pods-Cocktail.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Cocktail.release.xcconfig"; path = "Target Support Files/Pods-Cocktail/Pods-Cocktail.release.xcconfig"; sourceTree = "<group>"; };
+		838F82032483F75E00A23AF3 /* Cocktail.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Cocktail.storyboard; sourceTree = "<group>"; };
+		838F82062483F78B00A23AF3 /* WallPapers.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = WallPapers.storyboard; sourceTree = "<group>"; };
+		838F82082483F79700A23AF3 /* Favorites.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Favorites.storyboard; sourceTree = "<group>"; };
 		83C0B4BE2483DF5500EFA84A /* Cocktail.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Cocktail.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		83C0B4C12483DF5500EFA84A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		83C0B4C32483DF5500EFA84A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -52,6 +58,17 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		838F82052483F76700A23AF3 /* StoryBoards */ = {
+			isa = PBXGroup;
+			children = (
+				83C0B4C72483DF5500EFA84A /* Main.storyboard */,
+				838F82032483F75E00A23AF3 /* Cocktail.storyboard */,
+				838F82062483F78B00A23AF3 /* WallPapers.storyboard */,
+				838F82082483F79700A23AF3 /* Favorites.storyboard */,
+			);
+			path = StoryBoards;
+			sourceTree = "<group>";
+		};
 		83C0B4B52483DF5500EFA84A = {
 			isa = PBXGroup;
 			children = (
@@ -76,7 +93,7 @@
 				83C0B4C12483DF5500EFA84A /* AppDelegate.swift */,
 				83C0B4C32483DF5500EFA84A /* SceneDelegate.swift */,
 				83C0B4C52483DF5500EFA84A /* ViewController.swift */,
-				83C0B4C72483DF5500EFA84A /* Main.storyboard */,
+				838F82052483F76700A23AF3 /* StoryBoards */,
 				83C0B4CD2483DF5600EFA84A /* Assets.xcassets */,
 				83C0B4CF2483DF5600EFA84A /* LaunchScreen.storyboard */,
 				83C0B4D22483DF5600EFA84A /* Info.plist */,
@@ -91,7 +108,6 @@
 				EF7E0C7A5A2A4418B3B469DD /* Pods-Cocktail.debug.xcconfig */,
 				2745D23F33A5E34FF0EC9BE8 /* Pods-Cocktail.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -155,6 +171,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				838F82072483F78B00A23AF3 /* WallPapers.storyboard in Resources */,
+				838F82042483F75E00A23AF3 /* Cocktail.storyboard in Resources */,
+				838F82092483F79700A23AF3 /* Favorites.storyboard in Resources */,
 				83C0B4D12483DF5600EFA84A /* LaunchScreen.storyboard in Resources */,
 				83C0B4CE2483DF5600EFA84A /* Assets.xcassets in Resources */,
 				83C0B4C92483DF5500EFA84A /* Main.storyboard in Resources */,
