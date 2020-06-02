@@ -8,21 +8,18 @@
 
 import UIKit
 import Alamofire
+import SwiftyJSON
+
 
 class CategoriesVC: UIViewController {
-
+    
     // MARK: Variables
     
     var categories: [String] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
-    }
-    
-    func getCategories(){
         
-        AF.request(<#T##convertible: URLConvertible##URLConvertible#>)
+        // Do any additional setup after loading the view.
     }
 }
