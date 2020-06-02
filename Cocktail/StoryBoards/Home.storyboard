@@ -10,11 +10,31 @@
         <!--Home-->
         <scene sceneID="Dse-5h-GXF">
             <objects>
-                <viewController id="EYd-Xd-F30" sceneMemberID="viewController">
+                <viewController id="EYd-Xd-F30" customClass="HomeVC" customModule="Cocktail" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="cSw-Ql-U8e">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="vgf-b2-PI9">
+                                <rect key="frame" x="5" y="188" width="404" height="620"/>
+                            </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="E2E-LK-yM0">
+                                <rect key="frame" x="186" y="133" width="42" height="27"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="E2E-LK-yM0" firstAttribute="centerX" secondItem="cSw-Ql-U8e" secondAttribute="centerX" id="37Y-wS-ata"/>
+                            <constraint firstItem="vgf-b2-PI9" firstAttribute="top" secondItem="t9r-nR-tRi" secondAttribute="top" constant="100" id="8KB-Kx-hmc"/>
+                            <constraint firstItem="t9r-nR-tRi" firstAttribute="trailing" secondItem="vgf-b2-PI9" secondAttribute="trailing" constant="5" id="F8F-r6-vCx"/>
+                            <constraint firstItem="vgf-b2-PI9" firstAttribute="top" secondItem="E2E-LK-yM0" secondAttribute="bottom" constant="28" id="NFK-Ks-ITO"/>
+                            <constraint firstItem="vgf-b2-PI9" firstAttribute="leading" secondItem="t9r-nR-tRi" secondAttribute="leading" constant="5" id="mhZ-n5-Fe7"/>
+                            <constraint firstItem="E2E-LK-yM0" firstAttribute="top" secondItem="t9r-nR-tRi" secondAttribute="top" constant="45" id="nux-FY-fjd"/>
+                            <constraint firstItem="t9r-nR-tRi" firstAttribute="bottom" secondItem="vgf-b2-PI9" secondAttribute="bottom" constant="5" id="pkF-rQ-I3U"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="t9r-nR-tRi"/>
                     </view>
                     <navigationItem key="navigationItem" title="Home" id="qdw-1g-uyW"/>
@@ -22,6 +42,35 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8U9-eH-gTf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="4366.666666666667" y="-1793.3035714285713"/>
+        </scene>
+        <!--Title-->
+        <scene sceneID="0XR-I3-FgQ">
+            <objects>
+                <viewController id="i05-d9-eIJ" customClass="DetailVC" customModule="Cocktail" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="huT-0f-J04">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Pzl-Fp-fF0">
+                                <rect key="frame" x="87" y="340" width="240" height="216"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="Pzl-Fp-fF0" firstAttribute="top" secondItem="9wv-Fk-qfE" secondAttribute="top" constant="296" id="6rj-kU-y3J"/>
+                            <constraint firstItem="Pzl-Fp-fF0" firstAttribute="centerY" secondItem="huT-0f-J04" secondAttribute="centerY" id="awk-WF-ZgP"/>
+                            <constraint firstItem="Pzl-Fp-fF0" firstAttribute="leading" secondItem="9wv-Fk-qfE" secondAttribute="leading" constant="87" id="dyi-HD-WZx"/>
+                            <constraint firstItem="Pzl-Fp-fF0" firstAttribute="centerX" secondItem="huT-0f-J04" secondAttribute="centerX" id="vfE-c5-reY"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="9wv-Fk-qfE"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Title" id="VIq-5B-sqz"/>
+                    <connections>
+                        <outlet property="detailImageView" destination="Pzl-Fp-fF0" id="9uH-dv-NTg"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xWa-ca-40c" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="5296" y="-1793"/>
         </scene>
         <!--Home-->
         <scene sceneID="Lbl-fg-WpB">
