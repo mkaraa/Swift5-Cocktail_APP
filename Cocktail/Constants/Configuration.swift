@@ -10,6 +10,11 @@ import Foundation
 
 struct Configuration {
     
+    // MARK: Filter list alcoholic or non-alcoholic
+    
+    static let getAlcoholicListApiURL = "https://www.thecocktaildb.com/api/json/v1/1/filter.php?a=Alcoholic"
+    static let getNonAlcoholicListURL = "https://www.thecocktaildb.com/api/json/v1/1/filter.php?a=Non_Alcoholic"
+    
     // MARK:  List the categories, glasses, ingredients or alcoholic filters
     
     static let getCategoriesListApiURL = "https://www.thecocktaildb.com/api/json/v1/1/list.php?c=list"
