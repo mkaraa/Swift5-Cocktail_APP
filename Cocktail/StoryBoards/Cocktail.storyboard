@@ -4,7 +4,6 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
-        <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -129,52 +128,78 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="DNl-q6-fm6">
-                                <rect key="frame" x="5" y="93" width="404" height="715"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="VeK-ce-ofP">
-                                    <size key="itemSize" width="128" height="128"/>
-                                    <size key="headerReferenceSize" width="50" height="50"/>
-                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                </collectionViewFlowLayout>
-                                <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="iBs-8D-b40">
-                                        <rect key="frame" x="0.0" y="50" width="128" height="128"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="K6T-ET-1JZ">
-                                            <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                        </collectionViewCellContentView>
-                                    </collectionViewCell>
-                                </cells>
-                                <collectionReusableView key="sectionHeaderView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="hlf-XZ-RhG" customClass="CategoryCollectionReusableView" customModule="Cocktail" customModuleProvider="target">
-                                    <rect key="frame" x="0.0" y="0.0" width="404" height="50"/>
-                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                    <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8x9-rZ-8xU">
-                                            <rect key="frame" x="165" y="7" width="74.5" height="36"/>
-                                            <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="30"/>
-                                            <nil key="textColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                    </subviews>
-                                    <constraints>
-                                        <constraint firstItem="8x9-rZ-8xU" firstAttribute="centerY" secondItem="hlf-XZ-RhG" secondAttribute="centerY" id="SN3-cz-tUJ"/>
-                                        <constraint firstItem="8x9-rZ-8xU" firstAttribute="centerX" secondItem="hlf-XZ-RhG" secondAttribute="centerX" id="g6C-0Y-RfE"/>
-                                    </constraints>
-                                    <connections>
-                                        <outlet property="categoryTitle" destination="8x9-rZ-8xU" id="8XO-Ie-px5"/>
-                                    </connections>
-                                </collectionReusableView>
-                            </collectionView>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="ihx-cI-i3U">
+                                <rect key="frame" x="5" y="98" width="404" height="615"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="hQj-z5-0LK">
+                                        <rect key="frame" x="0.0" y="0.0" width="197" height="615"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BDC-XP-fiK">
+                                                <rect key="frame" x="0.0" y="0.0" width="197" height="111"/>
+                                                <state key="normal" title="Ordinary Drink"/>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4VJ-Y2-rYO">
+                                                <rect key="frame" x="0.0" y="126" width="197" height="111"/>
+                                                <state key="normal" title="Button"/>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fyx-iL-g5p">
+                                                <rect key="frame" x="0.0" y="252" width="197" height="111"/>
+                                                <state key="normal" title="Button"/>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="l6D-Ms-qJQ">
+                                                <rect key="frame" x="0.0" y="378" width="197" height="111"/>
+                                                <state key="normal" title="Button"/>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oIi-H7-YLL">
+                                                <rect key="frame" x="0.0" y="504" width="197" height="111"/>
+                                                <state key="normal" title="Button"/>
+                                            </button>
+                                        </subviews>
+                                        <color key="backgroundColor" systemColor="systemTealColor" red="0.35294117650000001" green="0.7843137255" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="MAC-RZ-LZu">
+                                        <rect key="frame" x="207" y="0.0" width="197" height="615"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hmV-iS-RSJ">
+                                                <rect key="frame" x="0.0" y="0.0" width="197" height="111"/>
+                                                <state key="normal" title="Button"/>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ydt-eZ-Rl8">
+                                                <rect key="frame" x="0.0" y="126" width="197" height="111"/>
+                                                <state key="normal" title="Button"/>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="U7F-Y1-CVQ">
+                                                <rect key="frame" x="0.0" y="252" width="197" height="111"/>
+                                                <state key="normal" title="Button"/>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ke5-uX-tym">
+                                                <rect key="frame" x="0.0" y="378" width="197" height="111"/>
+                                                <state key="normal" title="Button"/>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wvu-dL-Y9i">
+                                                <rect key="frame" x="0.0" y="504" width="197" height="111"/>
+                                                <state key="normal" title="Button"/>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                            </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fbk-1M-AMv">
+                                <rect key="frame" x="10" y="723" width="394" height="50"/>
+                                <state key="normal" title="Other"/>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="pu3-84-GIT" firstAttribute="bottom" secondItem="DNl-q6-fm6" secondAttribute="bottom" constant="5" id="cks-Q2-4y6"/>
-                            <constraint firstItem="pu3-84-GIT" firstAttribute="trailing" secondItem="DNl-q6-fm6" secondAttribute="trailing" constant="5" id="mPX-LS-2UN"/>
-                            <constraint firstItem="DNl-q6-fm6" firstAttribute="leading" secondItem="pu3-84-GIT" secondAttribute="leading" constant="5" id="tKF-gS-wY1"/>
-                            <constraint firstItem="DNl-q6-fm6" firstAttribute="top" secondItem="pu3-84-GIT" secondAttribute="top" constant="5" id="ttK-VN-H2a"/>
+                            <constraint firstItem="pu3-84-GIT" firstAttribute="bottom" secondItem="fbk-1M-AMv" secondAttribute="bottom" constant="40" id="4dT-Jm-nex"/>
+                            <constraint firstItem="pu3-84-GIT" firstAttribute="trailing" secondItem="ihx-cI-i3U" secondAttribute="trailing" constant="5" id="EJD-VB-TPj"/>
+                            <constraint firstItem="ihx-cI-i3U" firstAttribute="top" secondItem="pu3-84-GIT" secondAttribute="top" constant="10" id="Jnb-Ls-HqL"/>
+                            <constraint firstItem="pu3-84-GIT" firstAttribute="bottom" secondItem="ihx-cI-i3U" secondAttribute="bottom" constant="100" id="TZb-n1-SDa"/>
+                            <constraint firstItem="fbk-1M-AMv" firstAttribute="leading" secondItem="pu3-84-GIT" secondAttribute="leading" constant="10" id="aw7-74-uTC"/>
+                            <constraint firstItem="fbk-1M-AMv" firstAttribute="top" secondItem="ihx-cI-i3U" secondAttribute="bottom" constant="10" id="fbR-4Y-tc2"/>
+                            <constraint firstItem="pu3-84-GIT" firstAttribute="trailing" secondItem="fbk-1M-AMv" secondAttribute="trailing" constant="10" id="frw-1L-PrE"/>
+                            <constraint firstItem="fbk-1M-AMv" firstAttribute="centerX" secondItem="gul-dV-ZJ8" secondAttribute="centerX" id="o6S-MW-z6j"/>
+                            <constraint firstItem="ihx-cI-i3U" firstAttribute="leading" secondItem="pu3-84-GIT" secondAttribute="leading" constant="5" id="xFU-81-ZxF"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="pu3-84-GIT"/>
                     </view>
@@ -197,7 +222,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hbs-xz-20f" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2248" y="-103"/>
+            <point key="canvasLocation" x="2248" y="842"/>
         </scene>
     </scenes>
     <resources>
