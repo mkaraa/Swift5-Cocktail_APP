@@ -7,18 +7,129 @@
 //
 
 import UIKit
+import Alamofire
+import SwiftyJSON
 
-class ListCocktailVC: UIViewController {
+struct listOfCocktail {
+    let id: String!
+    let name: String!
+    let image: String!
+}
 
-    // MARK: Variable
-    var apiUrl: String?
-    var categoryTitle: String?
+class ListCocktailVC: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate {
+
     
+    
+    // MARK: IBOutlet
+    @IBOutlet weak var mCollectionView: UICollectionView!
+    
+    // MARK: Variable
+     
+     var apiUrl: URL?
+     var categoryTitle: String?
+     var listItem = [listOfCocktail]()
+
+    // MARK: viewDidLoad
     override func viewDidLoad() {
         super.viewDidLoad()
-
-       
-        // Do any additional setup after loading the view.
+        
+        // delegate
+        self.mCollectionView.delegate = self
+        self.mCollectionView.dataSource = self
+        
+        self.title = categoryTitle
+        getList()
+        
     }
+    
+    func getList(){
+        
+        AF.request(apiUrl!).responseJSON { myresponse in
+            
+            // check result is success or failure
+            switch myresponse.result {
+            case .success:
+                
+                // GET data
+                let myresult = try? JSON(data: myresponse.data!)
+                
+                let resultArray = myresult!
+                
+                for item in resultArray["drinks"].arrayValue {
+                    
+                    let id = item["idDrink"].string
+                    let name = item["strDrink"].string
+                    let image = item["strDrinkThumb"].string
+                    print(id!,name!)
+                    self.listItem.insert(listOfCocktail(id: id, name: name, image: image), at: 0)
+                }
+ 
+                print("LIST: ",self.listItem.count)
+                
+            case .failure:
+                
+                print("Error while getting list")
+                
+            }
+        }
+    }
+    
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
+    }
+    
+    // MARK: UICollectionView
+    
+      func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+          return listItem.count
+      }
+     
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! CustomCollectionViewCell
+        
+        let name = listItem[indexPath.row].name
+        
+        
+        cell.cellLabel.text = name!
+        
+        return cell
+        
+    }
+    
 
+    
+    // Our function to find the indexPath of selected cell
+    func getIndexPathForSelectedCell() -> IndexPath? {
+        var indexPath: IndexPath?
+        
+        if mCollectionView.indexPathsForSelectedItems!.count > 0 {
+            indexPath = mCollectionView.indexPathsForSelectedItems![0] as IndexPath
+        }
+        
+        return indexPath
+    }
+    
+}
+
+// MARK: CustomCollectionViewCell - class
+class CustomCollectionViewCell: UICollectionViewCell {
+    @IBOutlet weak var cellImageView: UIImageView!
+    @IBOutlet weak var cellLabel: UILabel!
+}
+
+extension UIImageView {
+    func load(url: URL) {
+        DispatchQueue.global().async { [weak self] in
+            if let data = try? Data(contentsOf: url) {
+                if let image = UIImage(data: data) {
+                    DispatchQueue.main.async {
+                        self?.image = image
+                    }
+                }
+            }
+        }
+    }
 }

@@ -13,26 +13,20 @@ class CategoriesVC: UIViewController {
     
     // MARK: IBOutlet
     
-    @IBOutlet weak var ordinaryDrinkBtn: UIButton!
-    @IBOutlet weak var cocktailBtn: UIButton!
-    @IBOutlet weak var milkFloatShakeBtn: UIButton!
-    @IBOutlet weak var cocoaBtn: UIButton!
-    @IBOutlet weak var shotBtn: UIButton!
-    @IBOutlet weak var coffeeTeaBtn: UIButton!
-    @IBOutlet weak var homemadeLiqueurBtn: UIButton!
-    @IBOutlet weak var punchPartyDrinkBtn: UIButton!
-    @IBOutlet weak var beerBtn: UIButton!
-    @IBOutlet weak var softDrinkSodaBtn: UIButton!
-    @IBOutlet weak var otherBtn: UIButton!
+    @IBOutlet var categoriesButtons: [UIButton]!
+    
     
     // MARK: Variable
     
-    var apiUrl: String?
+    var apiUrl: URL?
     var catTitle: String?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        categoriesButtons = categoriesButtons.sorted() {
+            $0.tag < $1.tag
+        }
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -47,73 +41,75 @@ class CategoriesVC: UIViewController {
     
     // MARK: Actions
     
-    @IBAction func ordinaryDrinkAction(_ sender: Any) {
-        apiUrl = Configuration.getOrdinaryDrinkListApiURL
-        catTitle = "Ordinary Drink"
-        performSegue(withIdentifier: "sendCategorySegue", sender: self)
+    @IBAction func categoriesButtonsTapped(_ sender: UIButton) {
+       
+            if sender.tag == 0 {
+                apiUrl = Configuration.getOrdinaryDrinkListApiURL
+                catTitle = "Ordinary Drink"
+                performSegue(withIdentifier: "sendCategorySegue", sender: self)
+                
+            }
+            else if sender.tag == 1 {
+                apiUrl = Configuration.getCocktailListApiURL
+                catTitle = "Cocktail"
+                performSegue(withIdentifier: "sendCategorySegue", sender: self)
+                
+            }
+            else if sender.tag == 2 {
+                apiUrl = Configuration.getMilkFLoatShakeApiURL
+                catTitle = "Milk / Float / Shake"
+                performSegue(withIdentifier: "sendCategorySegue", sender: self)
+                
+            }
+            else if sender.tag == 3 {
+                apiUrl = Configuration.getCocoaListApiURL
+                catTitle = "Cocoa"
+                performSegue(withIdentifier: "sendCategorySegue", sender: self)
+                
+            }
+            else if sender.tag == 4 {
+                apiUrl = Configuration.getShotDrinkListApiURL
+                catTitle = "Shot"
+                performSegue(withIdentifier: "sendCategorySegue", sender: self)
+                
+            }
+            else if sender.tag == 5 {
+                apiUrl = Configuration.getCoffeeTeaApiURL
+                catTitle = "Coffee / Tea"
+                performSegue(withIdentifier: "sendCategorySegue", sender: self)
+                
+            }
+            else if sender.tag == 6 {
+                apiUrl = Configuration.getHomemadeLiqueurApiURL
+                catTitle = "Homemade Liqueur"
+                performSegue(withIdentifier: "sendCategorySegue", sender: self)
+                
+            }
+            else if sender.tag == 7 {
+                apiUrl = Configuration.getPunchPartyDrinkApiURL
+                catTitle = "Punch / Party Drink"
+                performSegue(withIdentifier: "sendCategorySegue", sender: self)
+                
+            }
+            else if sender.tag == 8 {
+                apiUrl = Configuration.getBeerApiURL
+                catTitle = "Beer"
+                performSegue(withIdentifier: "sendCategorySegue", sender: self)
+                
+            }
+            else if sender.tag == 9 {
+                apiUrl = Configuration.getSoftDrinkSodaApiURL
+                catTitle = "Soft Drink / Soda"
+                performSegue(withIdentifier: "sendCategorySegue", sender: self)
+                
+            }
+            else {
+                apiUrl = Configuration.getOtherUnkownmApiURL
+                catTitle = "Other"
+                performSegue(withIdentifier: "sendCategorySegue", sender: self)
+                
+            }
     }
-    
-    @IBAction func cocktailAction(_ sender: Any) {
-        apiUrl = Configuration.getCocktailListApiURL
-        catTitle = "Cocktail"
-        performSegue(withIdentifier: "sendCategorySegue", sender: self)
-    }
-    
-    @IBAction func mfsAction(_ sender: Any) {
-        apiUrl = Configuration.getMilkFLoatShakeApiURL
-        catTitle = "Milk / Float / Shake"
-        performSegue(withIdentifier: "sendCategorySegue", sender: self)
-    }
-    
-    @IBAction func cocoaAction(_ sender: Any) {
-        apiUrl = Configuration.getCocoaListApiURL
-        catTitle = "Cocoa"
-        performSegue(withIdentifier: "sendCategorySegue", sender: self)
-    }
-    
-    @IBAction func shotAction(_ sender: Any) {
-        apiUrl = Configuration.getShotDrinkListApiURL
-        catTitle = "Shot"
-        performSegue(withIdentifier: "sendCategorySegue", sender: self)
-    }
-    
-    @IBAction func coffeeTeaAction(_ sender: Any) {
-        apiUrl = Configuration.getCoffeeTeaApiURL
-        catTitle = "Coffee / Tea"
-        performSegue(withIdentifier: "sendCategorySegue", sender: self)
-    }
-    
-    @IBAction func homemadeLiqueurAction(_ sender: Any) {
-        apiUrl = Configuration.getHomemadeLiqueurApiURL
-        catTitle = "HomemadeLiqueur"
-        performSegue(withIdentifier: "sendCategorySegue", sender: self)
-    }
-    
-    @IBAction func punchPartyDrinkAction(_ sender: Any) {
-        apiUrl = Configuration.getPunchPartyDrinkApiURL
-        catTitle = "Punch / Party Drink"
-        performSegue(withIdentifier: "sendCategorySegue", sender: self)
-    }
-    
-    @IBAction func beerAction(_ sender: Any) {
-        apiUrl = Configuration.getBeerApiURL
-        catTitle = "Beer"
-        performSegue(withIdentifier: "sendCategorySegue", sender: self)
-    }
-    
-    @IBAction func softDrinkSodaAction(_ sender: Any) {
-        apiUrl = Configuration.getSoftDrinkSodaApiURL
-        catTitle = "Soft Drink / Soda"
-        performSegue(withIdentifier: "sendCategorySegue", sender: self)
-    }
-    
-    @IBAction func otherAction(_ sender: Any) {
-        apiUrl = Configuration.getOtherUnkownmApiURL
-        catTitle = "Other Cocktails"
-        performSegue(withIdentifier: "sendCategorySegue", sender: self)
-    }
-    
-    
 }
 
 
