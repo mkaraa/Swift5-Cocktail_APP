@@ -297,6 +297,9 @@
                                             <subviews>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="EGu-i2-n0x">
                                                     <rect key="frame" x="10" y="0.0" width="95" height="95"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="95" id="f6a-SE-tRA"/>
+                                                    </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ivg-yn-CDE">
                                                     <rect key="frame" x="36.5" y="100" width="42" height="21"/>
@@ -306,12 +309,11 @@
                                                 </label>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="EGu-i2-n0x" firstAttribute="leading" secondItem="a0s-uh-tzr" secondAttribute="leading" constant="10" id="Fmb-gC-xKZ"/>
+                                                <constraint firstItem="EGu-i2-n0x" firstAttribute="centerX" secondItem="a0s-uh-tzr" secondAttribute="centerX" id="AvW-Z1-WCv"/>
                                                 <constraint firstItem="Ivg-yn-CDE" firstAttribute="top" secondItem="EGu-i2-n0x" secondAttribute="bottom" constant="5" id="bxy-sm-3zg"/>
-                                                <constraint firstItem="Ivg-yn-CDE" firstAttribute="centerX" secondItem="a0s-uh-tzr" secondAttribute="centerX" id="koE-ID-Fd4"/>
-                                                <constraint firstAttribute="trailing" secondItem="EGu-i2-n0x" secondAttribute="trailing" constant="10" id="oMP-Z8-yLL"/>
-                                                <constraint firstAttribute="bottom" secondItem="Ivg-yn-CDE" secondAttribute="bottom" constant="5" id="u6b-FV-c8c"/>
-                                                <constraint firstItem="EGu-i2-n0x" firstAttribute="top" secondItem="a0s-uh-tzr" secondAttribute="top" id="x0E-gp-6nf"/>
+                                                <constraint firstItem="EGu-i2-n0x" firstAttribute="top" secondItem="a0s-uh-tzr" secondAttribute="top" id="cKc-k4-hZY"/>
+                                                <constraint firstItem="EGu-i2-n0x" firstAttribute="leading" secondItem="a0s-uh-tzr" secondAttribute="leading" constant="10" id="ePG-jN-3k3"/>
+                                                <constraint firstItem="EGu-i2-n0x" firstAttribute="centerX" secondItem="Ivg-yn-CDE" secondAttribute="centerX" id="oJ8-A8-KUd"/>
                                             </constraints>
                                         </collectionViewCellContentView>
                                         <size key="customSize" width="115" height="126"/>

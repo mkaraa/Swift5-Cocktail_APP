@@ -119,18 +119,23 @@ class ListCocktailVC: UIViewController, UICollectionViewDataSource, UICollection
 class CustomCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var cellImageView: UIImageView!
     @IBOutlet weak var cellLabel: UILabel!
-}
-
-extension UIImageView {
-    func load(url: URL) {
-        DispatchQueue.global().async { [weak self] in
-            if let data = try? Data(contentsOf: url) {
-                if let image = UIImage(data: data) {
-                    DispatchQueue.main.async {
-                        self?.image = image
-                    }
-                }
-            }
-        }
-    }
+    
+//    private lazy var setupOnce: Void = {
+//        contentView.layer.cornerRadius = 12.0
+//        contentView.layer.masksToBounds = true
+//
+//        layer.shadowColor = UIColor.black.cgColor
+//        layer.shadowOffset = CGSize(width: 0, height: 1.0)
+//        layer.shadowRadius = 1.0
+//        layer.shadowOpacity = 0.2
+//        layer.masksToBounds = false
+//        layer.shadowPath = UIBezierPath(roundedRect: self.bounds, cornerRadius: self.contentView.layer.cornerRadius).cgPath
+//    }()
+//
+//
+//    override func layoutSubviews() {
+//        super.layoutSubviews()
+//
+//        _ = setupOnce
+//    }
 }
