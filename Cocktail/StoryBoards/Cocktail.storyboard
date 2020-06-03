@@ -282,24 +282,24 @@
                                 <rect key="frame" x="20" y="20" width="374" height="768"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="bmI-h1-lyS">
-                                    <size key="itemSize" width="374" height="238"/>
+                                    <size key="itemSize" width="115" height="126"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="cell" id="GrQ-na-u94" customClass="CustomCollectionViewCell" customModule="Cocktail">
-                                        <rect key="frame" x="0.0" y="0.0" width="374" height="238"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="115" height="126"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="a0s-uh-tzr">
-                                            <rect key="frame" x="0.0" y="0.0" width="374" height="238"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="115" height="126"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <subviews>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="EGu-i2-n0x">
-                                                    <rect key="frame" x="10" y="0.0" width="354" height="207"/>
+                                                    <rect key="frame" x="10" y="0.0" width="95" height="95"/>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ivg-yn-CDE">
-                                                    <rect key="frame" x="166" y="212" width="42" height="21"/>
+                                                    <rect key="frame" x="36.5" y="100" width="42" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -314,7 +314,7 @@
                                                 <constraint firstItem="EGu-i2-n0x" firstAttribute="top" secondItem="a0s-uh-tzr" secondAttribute="top" id="x0E-gp-6nf"/>
                                             </constraints>
                                         </collectionViewCellContentView>
-                                        <size key="customSize" width="374" height="238"/>
+                                        <size key="customSize" width="115" height="126"/>
                                         <connections>
                                             <outlet property="cellImageView" destination="EGu-i2-n0x" id="XcA-LH-osc"/>
                                             <outlet property="cellLabel" destination="Ivg-yn-CDE" id="Lfu-rn-RtO"/>

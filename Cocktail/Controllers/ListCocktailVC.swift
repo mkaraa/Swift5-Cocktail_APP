@@ -9,6 +9,7 @@
 import UIKit
 import Alamofire
 import SwiftyJSON
+import Kingfisher
 
 struct listOfCocktail {
     let id: String!
@@ -90,10 +91,10 @@ class ListCocktailVC: UIViewController, UICollectionViewDataSource, UICollection
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! CustomCollectionViewCell
         
-        //let name = listItem[indexPath.row].name
-        
-        //cell.cellImageView.image = UIImage(named: loadavg(listItem[indexPath.row].image))
         cell.cellLabel.text = listItem[indexPath.row].name
+        
+        let url = URL(string: listItem[indexPath.row].image)
+        cell.cellImageView.kf.setImage(with: url)
         
         return cell
         
