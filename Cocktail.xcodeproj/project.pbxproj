@@ -10,7 +10,8 @@
 		833838A624869D5C006F019B /* CategoriesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 833838A524869D5C006F019B /* CategoriesVC.swift */; };
 		833838A824869DE6006F019B /* AlcoholFilteredVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 833838A724869DE6006F019B /* AlcoholFilteredVC.swift */; };
 		833838AD2486A571006F019B /* Configuration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 833838AC2486A571006F019B /* Configuration.swift */; };
-		836504C724857D3900CB1D12 /* DetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 836504C624857D3900CB1D12 /* DetailVC.swift */; };
+		833838AF248714A7006F019B /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 833838AE248714A7006F019B /* CollectionViewCell.swift */; };
+		833838B124871D70006F019B /* ListCocktailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 833838B024871D70006F019B /* ListCocktailVC.swift */; };
 		838F82042483F75E00A23AF3 /* Cocktail.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 838F82032483F75E00A23AF3 /* Cocktail.storyboard */; };
 		838F82072483F78B00A23AF3 /* WallPapers.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 838F82062483F78B00A23AF3 /* WallPapers.storyboard */; };
 		838F82092483F79700A23AF3 /* Favorites.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 838F82082483F79700A23AF3 /* Favorites.storyboard */; };
@@ -34,7 +35,8 @@
 		833838A524869D5C006F019B /* CategoriesVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesVC.swift; sourceTree = "<group>"; };
 		833838A724869DE6006F019B /* AlcoholFilteredVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlcoholFilteredVC.swift; sourceTree = "<group>"; };
 		833838AC2486A571006F019B /* Configuration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Configuration.swift; sourceTree = "<group>"; };
-		836504C624857D3900CB1D12 /* DetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailVC.swift; sourceTree = "<group>"; };
+		833838AE248714A7006F019B /* CollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
+		833838B024871D70006F019B /* ListCocktailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListCocktailVC.swift; sourceTree = "<group>"; };
 		838F82032483F75E00A23AF3 /* Cocktail.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Cocktail.storyboard; sourceTree = "<group>"; };
 		838F82062483F78B00A23AF3 /* WallPapers.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = WallPapers.storyboard; sourceTree = "<group>"; };
 		838F82082483F79700A23AF3 /* Favorites.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Favorites.storyboard; sourceTree = "<group>"; };
@@ -103,8 +105,9 @@
 				83C0B4C52483DF5500EFA84A /* HomeVC.swift */,
 				833838A524869D5C006F019B /* CategoriesVC.swift */,
 				833838A724869DE6006F019B /* AlcoholFilteredVC.swift */,
-				836504C624857D3900CB1D12 /* DetailVC.swift */,
 				838F82102483F8C400A23AF3 /* FavoritesVC.swift */,
+				833838B024871D70006F019B /* ListCocktailVC.swift */,
+				833838AE248714A7006F019B /* CollectionViewCell.swift */,
 				838F820A2483F82A00A23AF3 /* CocktailsVC.swift */,
 				838F820E2483F89F00A23AF3 /* WallPapersVC.swift */,
 			);
@@ -291,15 +294,16 @@
 			files = (
 				83C0B4C62483DF5500EFA84A /* HomeVC.swift in Sources */,
 				838F820B2483F82A00A23AF3 /* CocktailsVC.swift in Sources */,
+				833838AF248714A7006F019B /* CollectionViewCell.swift in Sources */,
 				83C0B4C22483DF5500EFA84A /* AppDelegate.swift in Sources */,
 				83C0B4C42483DF5500EFA84A /* SceneDelegate.swift in Sources */,
 				833838A624869D5C006F019B /* CategoriesVC.swift in Sources */,
-				836504C724857D3900CB1D12 /* DetailVC.swift in Sources */,
 				833838AD2486A571006F019B /* Configuration.swift in Sources */,
 				833838A824869DE6006F019B /* AlcoholFilteredVC.swift in Sources */,
 				838F82112483F8C400A23AF3 /* FavoritesVC.swift in Sources */,
 				839FDDA5248422B000459224 /* Services.swift in Sources */,
 				83C0B4CC2483DF5600EFA84A /* Cocktail.xcdatamodeld in Sources */,
+				833838B124871D70006F019B /* ListCocktailVC.swift in Sources */,
 				838F820F2483F89F00A23AF3 /* WallPapersVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

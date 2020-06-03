@@ -4,6 +4,7 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -136,23 +137,45 @@
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BDC-XP-fiK">
                                                 <rect key="frame" x="0.0" y="0.0" width="197" height="111"/>
-                                                <state key="normal" title="Ordinary Drink"/>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                                <state key="normal" title="Ordinary Drink">
+                                                    <color key="titleColor" systemColor="systemBlueColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="ordinaryDrinkAction:" destination="hD5-zN-U1U" eventType="touchUpInside" id="7XW-Qi-sdt"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4VJ-Y2-rYO">
                                                 <rect key="frame" x="0.0" y="126" width="197" height="111"/>
-                                                <state key="normal" title="Button"/>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                                <state key="normal" title="Milk / Float / Shake"/>
+                                                <connections>
+                                                    <action selector="mfsAction:" destination="hD5-zN-U1U" eventType="touchUpInside" id="GnP-8H-Sbk"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fyx-iL-g5p">
                                                 <rect key="frame" x="0.0" y="252" width="197" height="111"/>
-                                                <state key="normal" title="Button"/>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                                <state key="normal" title="Shot"/>
+                                                <connections>
+                                                    <action selector="shotAction:" destination="hD5-zN-U1U" eventType="touchUpInside" id="WyJ-tw-znV"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="l6D-Ms-qJQ">
                                                 <rect key="frame" x="0.0" y="378" width="197" height="111"/>
-                                                <state key="normal" title="Button"/>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                                <state key="normal" title="Homemade Liqueur"/>
+                                                <connections>
+                                                    <action selector="homemadeLiqueurAction:" destination="hD5-zN-U1U" eventType="touchUpInside" id="QEv-le-uyV"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oIi-H7-YLL">
                                                 <rect key="frame" x="0.0" y="504" width="197" height="111"/>
-                                                <state key="normal" title="Button"/>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                                <state key="normal" title="Beer"/>
+                                                <connections>
+                                                    <action selector="beerAction:" destination="hD5-zN-U1U" eventType="touchUpInside" id="rZ2-Pz-Jmj"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                         <color key="backgroundColor" systemColor="systemTealColor" red="0.35294117650000001" green="0.7843137255" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -162,23 +185,43 @@
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hmV-iS-RSJ">
                                                 <rect key="frame" x="0.0" y="0.0" width="197" height="111"/>
-                                                <state key="normal" title="Button"/>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                                <state key="normal" title="Cocktail"/>
+                                                <connections>
+                                                    <action selector="cocktailAction:" destination="hD5-zN-U1U" eventType="touchUpInside" id="aLu-be-AQK"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ydt-eZ-Rl8">
                                                 <rect key="frame" x="0.0" y="126" width="197" height="111"/>
-                                                <state key="normal" title="Button"/>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                                <state key="normal" title="Cocoa"/>
+                                                <connections>
+                                                    <action selector="cocoaAction:" destination="hD5-zN-U1U" eventType="touchUpInside" id="buB-ln-7KV"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="U7F-Y1-CVQ">
                                                 <rect key="frame" x="0.0" y="252" width="197" height="111"/>
-                                                <state key="normal" title="Button"/>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                                <state key="normal" title="Coffee / Tea"/>
+                                                <connections>
+                                                    <action selector="coffeeTeaAction:" destination="hD5-zN-U1U" eventType="touchUpInside" id="4Zx-0o-JnQ"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ke5-uX-tym">
                                                 <rect key="frame" x="0.0" y="378" width="197" height="111"/>
-                                                <state key="normal" title="Button"/>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                                <state key="normal" title="Punch / Party Drink"/>
+                                                <connections>
+                                                    <action selector="punchPartyDrinkAction:" destination="hD5-zN-U1U" eventType="touchUpInside" id="Bgj-OX-dqN"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wvu-dL-Y9i">
                                                 <rect key="frame" x="0.0" y="504" width="197" height="111"/>
-                                                <state key="normal" title="Button"/>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                                <state key="normal" title="Soft Drink / Soda"/>
+                                                <connections>
+                                                    <action selector="softDrinkSodaAction:" destination="hD5-zN-U1U" eventType="touchUpInside" id="sx1-lt-Mp2"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                     </stackView>
@@ -186,7 +229,11 @@
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fbk-1M-AMv">
                                 <rect key="frame" x="10" y="723" width="394" height="50"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                                 <state key="normal" title="Other"/>
+                                <connections>
+                                    <action selector="otherAction:" destination="hD5-zN-U1U" eventType="touchUpInside" id="HiR-W8-sWc"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -204,25 +251,92 @@
                         <viewLayoutGuide key="safeArea" id="pu3-84-GIT"/>
                     </view>
                     <navigationItem key="navigationItem" title="CATEGORIES" id="INu-2J-kJ3"/>
+                    <connections>
+                        <outlet property="beerBtn" destination="oIi-H7-YLL" id="FZR-uu-ill"/>
+                        <outlet property="cocktailBtn" destination="hmV-iS-RSJ" id="tOE-Ws-Oet"/>
+                        <outlet property="cocoaBtn" destination="Ydt-eZ-Rl8" id="L5F-8d-Kpj"/>
+                        <outlet property="coffeeTeaBtn" destination="U7F-Y1-CVQ" id="R9H-vs-JdH"/>
+                        <outlet property="homemadeLiqueurBtn" destination="l6D-Ms-qJQ" id="6RB-u0-IkM"/>
+                        <outlet property="milkFloatShakeBtn" destination="4VJ-Y2-rYO" id="NcJ-IY-Gpa"/>
+                        <outlet property="ordinaryDrinkBtn" destination="BDC-XP-fiK" id="AY8-zo-HSI"/>
+                        <outlet property="otherBtn" destination="fbk-1M-AMv" id="jpd-NT-2Ck"/>
+                        <outlet property="punchPartyDrinkBtn" destination="Ke5-uX-tym" id="JjN-Wa-qrb"/>
+                        <outlet property="shotBtn" destination="fyx-iL-g5p" id="uOe-yw-Mqj"/>
+                        <outlet property="softDrinkSodaBtn" destination="wvu-dL-Y9i" id="7ZW-89-9ZN"/>
+                        <segue destination="Uhr-5o-IWD" kind="show" identifier="sendCategorySegue" id="pjV-9g-Jcv"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="npV-MD-gYL" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2247.826086956522" y="-828.34821428571422"/>
+            <point key="canvasLocation" x="2214" y="-492"/>
         </scene>
-        <!--View Controller-->
+        <!--List CocktailVC-->
         <scene sceneID="WZL-Yl-aus">
             <objects>
-                <viewController id="Uhr-5o-IWD" sceneMemberID="viewController">
+                <viewController id="Uhr-5o-IWD" customClass="ListCocktailVC" customModule="Cocktail" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="DCF-W3-26S">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="8ur-2A-Gol">
+                                <rect key="frame" x="8" y="39" width="398" height="818"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="VhH-ke-8a0">
+                                    <size key="itemSize" width="175" height="224"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="CollectionViewCellIdentifier" id="BNl-hg-2N9" customClass="CollectionViewCell" customModule="Cocktail">
+                                        <rect key="frame" x="0.0" y="0.0" width="180" height="200"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="mst-ja-IF5">
+                                            <rect key="frame" x="0.0" y="0.0" width="180" height="200"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="cQ4-mb-fQd">
+                                                    <rect key="frame" x="0.0" y="0.0" width="180" height="200"/>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Location" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="He7-vK-Jge">
+                                                    <rect key="frame" x="39" y="85.5" width="102" height="29"/>
+                                                    <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="24"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailing" secondItem="cQ4-mb-fQd" secondAttribute="trailing" id="0yX-VC-hZE"/>
+                                                <constraint firstItem="He7-vK-Jge" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="mst-ja-IF5" secondAttribute="leading" constant="10" id="1xw-2Y-cug"/>
+                                                <constraint firstAttribute="bottom" secondItem="cQ4-mb-fQd" secondAttribute="bottom" id="K6B-Nb-r4h"/>
+                                                <constraint firstItem="cQ4-mb-fQd" firstAttribute="leading" secondItem="mst-ja-IF5" secondAttribute="leading" id="Zzf-nH-o3C"/>
+                                                <constraint firstItem="He7-vK-Jge" firstAttribute="centerX" secondItem="mst-ja-IF5" secondAttribute="centerX" id="doe-Nx-ypu"/>
+                                                <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="He7-vK-Jge" secondAttribute="trailing" constant="10" id="kNb-99-i7G"/>
+                                                <constraint firstItem="He7-vK-Jge" firstAttribute="centerY" secondItem="mst-ja-IF5" secondAttribute="centerY" id="wP6-MF-grl"/>
+                                                <constraint firstItem="cQ4-mb-fQd" firstAttribute="top" secondItem="mst-ja-IF5" secondAttribute="top" id="z8T-tf-Ajc"/>
+                                            </constraints>
+                                        </collectionViewCellContentView>
+                                        <size key="customSize" width="180" height="200"/>
+                                        <connections>
+                                            <outlet property="locationImageView" destination="cQ4-mb-fQd" id="9o4-bB-xC1"/>
+                                            <outlet property="locationLabel" destination="He7-vK-Jge" id="wk5-V8-qjO"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
+                        </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="LME-EC-KJ3"/>
                     </view>
+                    <navigationItem key="navigationItem" id="Mht-xK-jdj"/>
+                    <connections>
+                        <outlet property="collectionView" destination="8ur-2A-Gol" id="mY2-Hz-Oov"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hbs-xz-20f" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2248" y="842"/>
+            <point key="canvasLocation" x="3416" y="-492"/>
         </scene>
     </scenes>
     <resources>
