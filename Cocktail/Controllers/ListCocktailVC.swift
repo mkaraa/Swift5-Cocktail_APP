@@ -18,8 +18,6 @@ struct listOfCocktail {
 
 class ListCocktailVC: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate {
 
-    
-    
     // MARK: IBOutlet
     @IBOutlet weak var mCollectionView: UICollectionView!
     
@@ -32,14 +30,14 @@ class ListCocktailVC: UIViewController, UICollectionViewDataSource, UICollection
     // MARK: viewDidLoad
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        getList()
+
         // delegate
         self.mCollectionView.delegate = self
         self.mCollectionView.dataSource = self
         
         self.title = categoryTitle
-        getList()
-        
+        self.mCollectionView.reloadData()
     }
     
     func getList(){
@@ -60,11 +58,12 @@ class ListCocktailVC: UIViewController, UICollectionViewDataSource, UICollection
                     let id = item["idDrink"].string
                     let name = item["strDrink"].string
                     let image = item["strDrinkThumb"].string
-                    print(id!,name!)
+                    print(id!,name!,image!)
                     self.listItem.insert(listOfCocktail(id: id, name: name, image: image), at: 0)
                 }
  
                 print("LIST: ",self.listItem.count)
+                self.mCollectionView.reloadData()
                 
             case .failure:
                 
@@ -81,19 +80,20 @@ class ListCocktailVC: UIViewController, UICollectionViewDataSource, UICollection
     
     // MARK: UICollectionView
     
-      func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-          return listItem.count
-      }
+   func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+    
+        return self.listItem.count
+   }
      
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! CustomCollectionViewCell
         
-        let name = listItem[indexPath.row].name
+        //let name = listItem[indexPath.row].name
         
-        
-        cell.cellLabel.text = name!
+        //cell.cellImageView.image = UIImage(named: loadavg(listItem[indexPath.row].image))
+        cell.cellLabel.text = listItem[indexPath.row].name
         
         return cell
         

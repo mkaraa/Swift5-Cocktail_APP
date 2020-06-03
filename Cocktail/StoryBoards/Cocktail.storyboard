@@ -126,17 +126,17 @@
             <objects>
                 <viewController id="hD5-zN-U1U" customClass="CategoriesVC" customModule="Cocktail" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="gul-dV-ZJ8">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="ihx-cI-i3U">
-                                <rect key="frame" x="5" y="98" width="404" height="615"/>
+                                <rect key="frame" x="5" y="10" width="404" height="698"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="hQj-z5-0LK">
-                                        <rect key="frame" x="0.0" y="0.0" width="197" height="615"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="197" height="698"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BDC-XP-fiK">
-                                                <rect key="frame" x="0.0" y="0.0" width="197" height="111"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="197" height="127.5"/>
                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                                                 <state key="normal" title="Ordinary Drink">
                                                     <color key="titleColor" systemColor="systemBlueColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -146,7 +146,7 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4VJ-Y2-rYO">
-                                                <rect key="frame" x="0.0" y="126" width="197" height="111"/>
+                                                <rect key="frame" x="0.0" y="142.5" width="197" height="127.5"/>
                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
                                                 <state key="normal" title="Milk / Float / Shake"/>
                                                 <connections>
@@ -154,7 +154,7 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fyx-iL-g5p">
-                                                <rect key="frame" x="0.0" y="252" width="197" height="111"/>
+                                                <rect key="frame" x="0.0" y="285" width="197" height="128"/>
                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                                                 <state key="normal" title="Shot"/>
                                                 <connections>
@@ -162,7 +162,7 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" tag="6" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="l6D-Ms-qJQ">
-                                                <rect key="frame" x="0.0" y="378" width="197" height="111"/>
+                                                <rect key="frame" x="0.0" y="428" width="197" height="127.5"/>
                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
                                                 <state key="normal" title="Homemade Liqueur"/>
                                                 <connections>
@@ -170,7 +170,7 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" tag="8" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oIi-H7-YLL">
-                                                <rect key="frame" x="0.0" y="504" width="197" height="111"/>
+                                                <rect key="frame" x="0.0" y="570.5" width="197" height="127.5"/>
                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                                                 <state key="normal" title="Beer"/>
                                                 <connections>
@@ -181,10 +181,10 @@
                                         <color key="backgroundColor" systemColor="systemTealColor" red="0.35294117650000001" green="0.7843137255" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="MAC-RZ-LZu">
-                                        <rect key="frame" x="207" y="0.0" width="197" height="615"/>
+                                        <rect key="frame" x="207" y="0.0" width="197" height="698"/>
                                         <subviews>
                                             <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hmV-iS-RSJ">
-                                                <rect key="frame" x="0.0" y="0.0" width="197" height="111"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="197" height="127.5"/>
                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                                                 <state key="normal" title="Cocktail"/>
                                                 <connections>
@@ -192,7 +192,7 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ydt-eZ-Rl8">
-                                                <rect key="frame" x="0.0" y="126" width="197" height="111"/>
+                                                <rect key="frame" x="0.0" y="142.5" width="197" height="127.5"/>
                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                                                 <state key="normal" title="Cocoa"/>
                                                 <connections>
@@ -200,7 +200,7 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="U7F-Y1-CVQ">
-                                                <rect key="frame" x="0.0" y="252" width="197" height="111"/>
+                                                <rect key="frame" x="0.0" y="285" width="197" height="128"/>
                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                                                 <state key="normal" title="Coffee / Tea"/>
                                                 <connections>
@@ -208,7 +208,7 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" tag="7" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ke5-uX-tym">
-                                                <rect key="frame" x="0.0" y="378" width="197" height="111"/>
+                                                <rect key="frame" x="0.0" y="428" width="197" height="127.5"/>
                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
                                                 <state key="normal" title="Punch / Party Drink"/>
                                                 <connections>
@@ -216,7 +216,7 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" tag="9" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wvu-dL-Y9i">
-                                                <rect key="frame" x="0.0" y="504" width="197" height="111"/>
+                                                <rect key="frame" x="0.0" y="570.5" width="197" height="127.5"/>
                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                                                 <state key="normal" title="Soft Drink / Soda"/>
                                                 <connections>
@@ -228,7 +228,7 @@
                                 </subviews>
                             </stackView>
                             <button opaque="NO" tag="10" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fbk-1M-AMv">
-                                <rect key="frame" x="10" y="723" width="394" height="50"/>
+                                <rect key="frame" x="10" y="718" width="394" height="50"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                                 <state key="normal" title="Other"/>
                                 <connections>
@@ -263,7 +263,7 @@
                         <outletCollection property="categoriesButtons" destination="oIi-H7-YLL" collectionClass="NSMutableArray" id="DaQ-AZ-PYW"/>
                         <outletCollection property="categoriesButtons" destination="wvu-dL-Y9i" collectionClass="NSMutableArray" id="HA1-tE-kbT"/>
                         <outletCollection property="categoriesButtons" destination="fbk-1M-AMv" collectionClass="NSMutableArray" id="caf-IF-T1V"/>
-                        <segue destination="KqS-P8-HYf" kind="show" identifier="sendCategorySegue" id="7A8-3h-48u"/>
+                        <segue destination="ZUM-8d-LXc" kind="show" identifier="sendCategorySegue" id="Pux-sd-I1Y"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="npV-MD-gYL" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -271,84 +271,35 @@
             <point key="canvasLocation" x="2214" y="-492"/>
         </scene>
         <!--List CocktailVC-->
-        <scene sceneID="zlI-ro-xWU">
-            <objects>
-                <viewController id="KqS-P8-HYf" customClass="ListCocktailVC" customModule="Cocktail" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="4hF-ou-PoP">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="oqG-6m-aGX">
-                                <rect key="frame" x="20" y="108" width="374" height="685"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                                <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" id="yYA-kq-f0w">
-                                        <rect key="frame" x="0.0" y="28" width="374" height="43.5"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="yYA-kq-f0w" id="G1E-at-ry8">
-                                            <rect key="frame" x="0.0" y="0.0" width="374" height="43.5"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
-                                </prototypes>
-                                <connections>
-                                    <outlet property="dataSource" destination="KqS-P8-HYf" id="Aux-yR-NP3"/>
-                                    <outlet property="delegate" destination="KqS-P8-HYf" id="epE-bP-Cks"/>
-                                </connections>
-                            </tableView>
-                        </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                        <constraints>
-                            <constraint firstItem="eVi-gl-VTs" firstAttribute="bottom" secondItem="oqG-6m-aGX" secondAttribute="bottom" constant="20" id="2SV-kK-6bm"/>
-                            <constraint firstItem="oqG-6m-aGX" firstAttribute="leading" secondItem="eVi-gl-VTs" secondAttribute="leading" constant="20" id="T4X-dx-KHQ"/>
-                            <constraint firstItem="eVi-gl-VTs" firstAttribute="trailing" secondItem="oqG-6m-aGX" secondAttribute="trailing" constant="20" id="X1S-KH-bcG"/>
-                            <constraint firstItem="oqG-6m-aGX" firstAttribute="top" secondItem="eVi-gl-VTs" secondAttribute="top" constant="20" id="rTy-o0-9k5"/>
-                        </constraints>
-                        <viewLayoutGuide key="safeArea" id="eVi-gl-VTs"/>
-                    </view>
-                    <navigationItem key="navigationItem" id="ndt-ka-Sp9">
-                        <barButtonItem key="leftBarButtonItem" title="&lt; Back" id="TAT-tc-YvW">
-                            <connections>
-                                <segue destination="YfQ-3I-9nG" kind="unwind" unwindAction="goBackToMainVC:" id="GRE-Uh-Gan"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Hf6-WI-kCO" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-                <exit id="YfQ-3I-9nG" userLabel="Exit" sceneMemberID="exit"/>
-            </objects>
-            <point key="canvasLocation" x="3071" y="-492"/>
-        </scene>
-        <!--List CocktailVC-->
         <scene sceneID="SAF-ZS-Ryf">
             <objects>
                 <viewController id="ZUM-8d-LXc" customClass="ListCocktailVC" customModule="Cocktail" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="PYR-YF-MzU">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Rne-si-qmS">
-                                <rect key="frame" x="20" y="64" width="374" height="778"/>
+                                <rect key="frame" x="20" y="20" width="374" height="768"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="bmI-h1-lyS">
-                                    <size key="itemSize" width="128" height="128"/>
+                                    <size key="itemSize" width="374" height="238"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="cell" id="GrQ-na-u94" customClass="CustomCollectionViewCell" customModule="CagatayOzata_HW2" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="cell" id="GrQ-na-u94" customClass="CustomCollectionViewCell" customModule="Cocktail">
+                                        <rect key="frame" x="0.0" y="0.0" width="374" height="238"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="a0s-uh-tzr">
-                                            <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="374" height="238"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <subviews>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="EGu-i2-n0x">
-                                                    <rect key="frame" x="10" y="0.0" width="108" height="97"/>
+                                                    <rect key="frame" x="10" y="0.0" width="354" height="207"/>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ivg-yn-CDE">
-                                                    <rect key="frame" x="43" y="102" width="42" height="21"/>
+                                                    <rect key="frame" x="166" y="212" width="42" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -363,6 +314,7 @@
                                                 <constraint firstItem="EGu-i2-n0x" firstAttribute="top" secondItem="a0s-uh-tzr" secondAttribute="top" id="x0E-gp-6nf"/>
                                             </constraints>
                                         </collectionViewCellContentView>
+                                        <size key="customSize" width="374" height="238"/>
                                         <connections>
                                             <outlet property="cellImageView" destination="EGu-i2-n0x" id="XcA-LH-osc"/>
                                             <outlet property="cellLabel" destination="Ivg-yn-CDE" id="Lfu-rn-RtO"/>
@@ -387,7 +339,7 @@
                     <navigationItem key="navigationItem" id="c1J-zo-Kfm">
                         <barButtonItem key="leftBarButtonItem" title="&lt; Back" id="3nd-V0-Hfm">
                             <connections>
-                                <segue destination="smE-Of-bZs" kind="unwind" unwindAction="goBackToMainVC:" id="SGJ-RU-2IK"/>
+                                <segue destination="hD5-zN-U1U" kind="show" id="EkT-FJ-kUO"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -396,11 +348,13 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VKI-bM-9BY" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-                <exit id="smE-Of-bZs" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="3033" y="312"/>
+            <point key="canvasLocation" x="3347.826086956522" y="-492.1875"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="EkT-FJ-kUO"/>
+    </inferredMetricsTieBreakers>
     <resources>
         <image name="alkollü" width="2121" height="1414"/>
         <image name="allcocktails" width="700" height="400"/>
