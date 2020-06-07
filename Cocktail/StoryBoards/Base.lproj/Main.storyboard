@@ -16,7 +16,6 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
                     <connections>
-                        <segue destination="72e-ZF-RCz" kind="relationship" relationship="viewControllers" id="P2Y-Xm-WH4"/>
                         <segue destination="got-Bo-D5Z" kind="relationship" relationship="viewControllers" id="DLl-su-4H6"/>
                         <segue destination="CYq-1I-6sv" kind="relationship" relationship="viewControllers" id="Dir-Ox-BVn"/>
                         <segue destination="7Y0-zr-VQU" kind="relationship" relationship="viewControllers" id="yww-N6-m9F"/>
@@ -25,16 +24,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ppz-ES-spo" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2541" y="-1467"/>
-        </scene>
-        <!--Home-->
-        <scene sceneID="tEb-Zz-bSE">
-            <objects>
-                <viewControllerPlaceholder storyboardName="Home" id="72e-ZF-RCz" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="7S1-9Q-cYj"/>
-                </viewControllerPlaceholder>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="4pO-hT-SZi" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="3225" y="-1535"/>
         </scene>
         <!--Cocktail-->
         <scene sceneID="ckl-Sr-XWZ">
