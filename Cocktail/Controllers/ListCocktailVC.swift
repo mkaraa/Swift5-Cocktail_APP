@@ -18,21 +18,21 @@ struct listOfCocktail {
 }
 
 class ListCocktailVC: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate {
-
+    
     // MARK: IBOutlet
     @IBOutlet weak var mCollectionView: UICollectionView!
     
     // MARK: Variable
-     
-     var apiUrl: URL?
-     var categoryTitle: String?
-     var listItem = [listOfCocktail]()
-
+    
+    var apiUrl: URL?
+    var categoryTitle: String?
+    var listItem = [listOfCocktail]()
+    
     // MARK: viewDidLoad
     override func viewDidLoad() {
         super.viewDidLoad()
         getList()
-
+        
         // delegate
         self.mCollectionView.delegate = self
         self.mCollectionView.dataSource = self
@@ -62,7 +62,7 @@ class ListCocktailVC: UIViewController, UICollectionViewDataSource, UICollection
                     print(id!,name!,image!)
                     self.listItem.insert(listOfCocktail(id: id, name: name, image: image), at: 0)
                 }
- 
+                
                 print("LIST: ",self.listItem.count)
                 self.mCollectionView.reloadData()
                 
@@ -81,11 +81,11 @@ class ListCocktailVC: UIViewController, UICollectionViewDataSource, UICollection
     
     // MARK: UICollectionView
     
-   func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        
         return self.listItem.count
-   }
-     
+    }
+    
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
@@ -94,15 +94,31 @@ class ListCocktailVC: UIViewController, UICollectionViewDataSource, UICollection
         cell.cellLabel.text = listItem[indexPath.row].name
         
         let url = URL(string: listItem[indexPath.row].image)
+        
+        // kf = Kingfisher is to upload images from url
+        
         cell.cellImageView.kf.setImage(with: url)
         
         return cell
         
     }
     
-
+    // MARK: prepare()
     
-    // Our function to find the indexPath of selected cell
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let indexPath = getIndexPathForSelectedCell() {
+            let name = listItem[indexPath.row].name
+            let id = listItem[indexPath.row].id
+            
+            let mDetailVC = segue.destination as! DetailVC
+            mDetailVC.navigationItem.title = name
+            mDetailVC.id = id
+            
+        }
+    }
+    
+    // MARK: Our function to find the indexPath of selected cell
+    
     func getIndexPathForSelectedCell() -> IndexPath? {
         var indexPath: IndexPath?
         
@@ -112,30 +128,31 @@ class ListCocktailVC: UIViewController, UICollectionViewDataSource, UICollection
         
         return indexPath
     }
-    
 }
+
+
 
 // MARK: CustomCollectionViewCell - class
 class CustomCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var cellImageView: UIImageView!
     @IBOutlet weak var cellLabel: UILabel!
     
-//    private lazy var setupOnce: Void = {
-//        contentView.layer.cornerRadius = 12.0
-//        contentView.layer.masksToBounds = true
-//
-//        layer.shadowColor = UIColor.black.cgColor
-//        layer.shadowOffset = CGSize(width: 0, height: 1.0)
-//        layer.shadowRadius = 1.0
-//        layer.shadowOpacity = 0.2
-//        layer.masksToBounds = false
-//        layer.shadowPath = UIBezierPath(roundedRect: self.bounds, cornerRadius: self.contentView.layer.cornerRadius).cgPath
-//    }()
-//
-//
-//    override func layoutSubviews() {
-//        super.layoutSubviews()
-//
-//        _ = setupOnce
-//    }
+    //    private lazy var setupOnce: Void = {
+    //        contentView.layer.cornerRadius = 12.0
+    //        contentView.layer.masksToBounds = true
+    //
+    //        layer.shadowColor = UIColor.black.cgColor
+    //        layer.shadowOffset = CGSize(width: 0, height: 1.0)
+    //        layer.shadowRadius = 1.0
+    //        layer.shadowOpacity = 0.2
+    //        layer.masksToBounds = false
+    //        layer.shadowPath = UIBezierPath(roundedRect: self.bounds, cornerRadius: self.contentView.layer.cornerRadius).cgPath
+    //    }()
+    //
+    //
+    //    override func layoutSubviews() {
+    //        super.layoutSubviews()
+    //
+    //        _ = setupOnce
+    //    }
 }
