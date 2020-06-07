@@ -20,25 +20,29 @@ class DetailVC: UIViewController {
     @IBOutlet weak var textView: UITextView!
     
     var detailTitle: String?
-    
+    var ingredients: [String] = []
     var id: String?
-    var apiURL: URL? = Configuration.getCocktailDetailApiURL
+    var apiURL = "https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i="
+    var selectedUrl: String?
     
     // MARK: viewDidLoad()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        print(id as Any)
-        print(apiURL as Any)
+
+        selectedUrl = apiURL + id!
         
-        apiURL?.appendPathComponent(id!)
+        
+        print(id)
+        print(selectedUrl)
+        getDetailCoctail()
         
     }
     
     // MARK: GetDetailData
     
-    func getDetailCoctail(id: String){
-        AF.request(apiURL!, method: .get).responseJSON { myresponse in
+    func getDetailCoctail(){
+        AF.request(selectedUrl!, method: .get).responseJSON { myresponse in
 
             // check result is success or failure
             switch myresponse.result {
@@ -49,22 +53,36 @@ class DetailVC: UIViewController {
                 let resultArray = myresult!
 
                 //
+                var index: Int? = 0
+                
                 var i = 0
-                for item in resultArray.arrayValue {
+                
+                for item in resultArray["drinks"].arrayValue {
                     if item["idDrink"].stringValue == self.id {
-                        let id = item["idDrink"].string
+                        // let id = item["idDrink"].string
+                        let category = item["strCategory"].string
                         let name = item["strDrink"].string
                         let image = item["strDrinkThumb"].string
+                        let alcoholic = item["strAlcoholic"].string
+                        var instructions = item["strInstructions"].string
+                        var ingredient = item["strIngredient1"].string
+                       
                         
+                        if self.segmentedControl.selectedSegmentIndex == 0 {
+                            self.textView.text = ingredient
+                        } else {
+                            self.textView.text = instructions
+                        }
                         
-                        
+                        print(self.ingredients)
+    
                     }
 
                     i = i + 1
                 }
 
             case .failure:
-                Alert.showAlert(message: "Bir hata oluştu. Pet Shop Listesi Getiriemedi!", vc: self)
+                print("Error")
             }
         }
     }

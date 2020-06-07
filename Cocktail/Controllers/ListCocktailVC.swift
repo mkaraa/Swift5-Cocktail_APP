@@ -63,7 +63,7 @@ class ListCocktailVC: UIViewController, UICollectionViewDataSource, UICollection
                     self.listItem.insert(listOfCocktail(id: id, name: name, image: image), at: 0)
                 }
                 
-                print("LIST: ",self.listItem.count)
+                // print("LIST: ",self.listItem.count)
                 self.mCollectionView.reloadData()
                 
             case .failure:
