@@ -25,6 +25,7 @@ class DetailVC: UIViewController {
     var selectedUrl: String?
     
     var ingredients: [String] = []
+    var measurements: [String] = []
     var ingredient: String?
     var instruction: String?
     var index = 0
@@ -81,9 +82,10 @@ class DetailVC: UIViewController {
                         }
                         
                         if let isIngredientExist = item["strMeasure\(String(describing: index))"].string {
-                            self.ingredients.append(isIngredientExist)
+                            self.measurements.append(isIngredientExist)
                             index! += 1
                         }
+                        
                         //
                         //                        self.ingredients.append(ingredient1!)
                         //                        self.ingredients.append(ingredient2!)
@@ -109,10 +111,16 @@ class DetailVC: UIViewController {
     
     @IBAction func SegmentControlAction(_ sender: Any) {
         if self.segmentedControl.selectedSegmentIndex == 0 {
+
             for cocktail in self.ingredients {
                 self.textView.text = cocktail
             }
         } else {
+            self.textView.text = "Measurements \n"
+            for measure in self.measurements {
+                self.textView.text = measure
+            }
+            self.textView.text = "Prepare \n"
             self.textView.text = instruction
         }
     }
