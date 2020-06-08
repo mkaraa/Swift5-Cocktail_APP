@@ -171,23 +171,4 @@ class DetailVC: UIViewController {
             print("Could not save \(error), \(error.userInfo)")
         }
     }
-    
-    func getData(){
-        //1
-        let managedContext = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
-        
-        //2
-        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Person")
-        
-        //3
-        do {
-            let results = try managedContext.fetch(fetchRequest)
-                
-            for data in results  {
-                print("DATA :",data)
-            }
-        } catch let error as NSError {
-            print("Could not fetch \(error), \(error.userInfo)")
-        }
-    }
 }

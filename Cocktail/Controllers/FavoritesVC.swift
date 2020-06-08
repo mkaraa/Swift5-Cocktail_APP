@@ -7,24 +7,40 @@
 //
 
 import UIKit
+import CoreData
 
 class FavoritesVC: UIViewController {
 
+    // MARK: Variables
+    
+    var ids = [NSManagedObject]()
+    
+    // MARK: viewDidLoad()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        print(ids)
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
+    // MARK: Fetch CoreData
+    
+     override func viewWillAppear(_ animated: Bool) {
+         //1
+         let managedContext = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+         
+         //2
+         let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Person")
+         
+         //3
+         do {
+             let results = try managedContext.fetch(fetchRequest)
+             ids = results as! [NSManagedObject]
+             
+         } catch let error as NSError {
+             print("Could not fetch \(error), \(error.userInfo)")
+         }
+     }
 
 }
