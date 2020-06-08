@@ -71,11 +71,19 @@ class DetailVC: UIViewController {
                         let image = item["strDrinkThumb"].string
                         let alcoholic = item["strAlcoholic"].string
                         let instructions = item["strInstructions"].string
-
+                        
                         for index in 1...15 {
                             
                             if item["strIngredient\(index)"].string != nil {
                                 self.ingredients.append(item["strIngredient\(index)"].stringValue)
+                            }
+                            
+                        }
+                        
+                        for index in 1...15 {
+                            
+                            if item["strMeasure\(index)"].string != nil {
+                                self.measurements.append(item["strMeasure\(index)"].stringValue)
                             }
                             
                         }
@@ -103,17 +111,10 @@ class DetailVC: UIViewController {
     func updateTextView(type: Int) {
         
         // 0 -> ingredients, 1 -> instruction
-        
+        var tempIngredients = "\n"
         if type == 0 {
             
             //ing
-            var tempIngredients = "Ingredients\n"
-            for item in ingredients {
-                tempIngredients += item + "\n"
-            }
-            
-            // mea
-            tempIngredients += "\n\nMeasuremnts\n"
             for item in ingredients {
                 tempIngredients += item + "\n"
             }
@@ -121,8 +122,16 @@ class DetailVC: UIViewController {
             // update label
             textView.text = tempIngredients
             
-        } else {
-            self.textView.text = "Prepare\n" + instruction!
+        } else if type == 1 {
+            // mea
+            for item in measurements {
+                tempIngredients += item + "\n"
+            }
+            textView.text = tempIngredients
+            
+        }
+        else {
+            self.textView.text = "\n" + instruction!
         }
         
     }
@@ -130,8 +139,11 @@ class DetailVC: UIViewController {
     @IBAction func SegmentControlAction(_ sender: Any) {
         if self.segmentedControl.selectedSegmentIndex == 0 {
             updateTextView(type: 0)
-        } else {
+        } else if self.segmentedControl.selectedSegmentIndex == 1 {
             updateTextView(type: 1)
+        }
+        else {
+            updateTextView(type: 2)
         }
     }
     
