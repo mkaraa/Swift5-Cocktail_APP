@@ -59,7 +59,7 @@ class ListCocktailVC: UIViewController, UICollectionViewDataSource, UICollection
                     let id = item["idDrink"].string
                     let name = item["strDrink"].string
                     let image = item["strDrinkThumb"].string
-                    print(id!,name!,image!)
+
                     self.listItem.insert(listOfCocktail(id: id, name: name, image: image), at: 0)
                 }
                 

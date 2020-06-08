@@ -16,20 +16,25 @@ class DetailVC: UIViewController {
     
     // MARK: IBOutlet
     
+    @IBOutlet weak var favButton: UIBarButtonItem!
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var segmentedControl: UISegmentedControl!
     @IBOutlet weak var textView: UITextView!
+    
+    // fav ids
+    var people = [NSManagedObject]()
     
     var detailTitle: String?
     var id: String?
     var apiURL = "https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i="
     var selectedUrl: String?
-    
+    var isFav: Bool? = false
     var ingredients: [String] = []
     var measurements: [String] = []
     var ingredient: String?
     var instruction: String?
     var index = 1
+    
     
     // MARK: viewDidLoad()
     
@@ -37,9 +42,6 @@ class DetailVC: UIViewController {
         super.viewDidLoad()
         
         selectedUrl = apiURL + id!
-        
-        print(id)
-        print(selectedUrl)
         
         getDetailCoctail()
         
@@ -98,10 +100,9 @@ class DetailVC: UIViewController {
                 }
                 
                 self.updateTextView(type: 0)
-                print("Ingredients" , self.ingredients)
                 
             case .failure:
-                print("Error")
+                print("Error cannot getDetailCocktail")
             }
         }
         
@@ -150,6 +151,43 @@ class DetailVC: UIViewController {
     // MARK: Save Fav Cocktails to Core Data
     
     @IBAction func SaveCoreData(_ sender: Any) {
-        print("Ingredients" , self.ingredients)
+        //1
+        let managedContext = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+        
+        //2 (Specifying the entity name and preparing to insert data into Core Data)
+        let entity =  NSEntityDescription.entity(forEntityName: "Person", in: managedContext)
+        let person = NSManagedObject(entity: entity!, insertInto: managedContext)
+        
+        //3 (inserting data into Core Data)
+        person.setValue(id, forKey: "name")
+        
+        //4
+        do {
+            // Saving the data in Core Data
+            try managedContext.save()
+            people.append(person)
+           print("\(id) Cocktail is added as favorite.")
+        } catch let error as NSError  {
+            print("Could not save \(error), \(error.userInfo)")
+        }
+    }
+    
+    func getData(){
+        //1
+        let managedContext = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+        
+        //2
+        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Person")
+        
+        //3
+        do {
+            let results = try managedContext.fetch(fetchRequest)
+                
+            for data in results  {
+                print("DATA :",data)
+            }
+        } catch let error as NSError {
+            print("Could not fetch \(error), \(error.userInfo)")
+        }
     }
 }
