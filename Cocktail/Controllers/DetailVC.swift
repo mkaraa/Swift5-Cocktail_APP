@@ -10,6 +10,7 @@ import UIKit
 import Alamofire
 import SwiftyJSON
 import Kingfisher
+import CoreData
 
 class DetailVC: UIViewController {
     
@@ -28,7 +29,7 @@ class DetailVC: UIViewController {
     var measurements: [String] = []
     var ingredient: String?
     var instruction: String?
-    var index = 0
+    var index = 1
     
     // MARK: viewDidLoad()
     
@@ -37,9 +38,9 @@ class DetailVC: UIViewController {
         
         selectedUrl = apiURL + id!
         
-        
         print(id)
         print(selectedUrl)
+        
         getDetailCoctail()
         
     }
@@ -70,29 +71,14 @@ class DetailVC: UIViewController {
                         let image = item["strDrinkThumb"].string
                         let alcoholic = item["strAlcoholic"].string
                         let instructions = item["strInstructions"].string
-                        //                        let ingredient1 = item["strIngredient1"].string
-                        //                        let ingredient2 = item["strIngredient2"].string
-                        //                        let ingredient3 = item["strIngredient3"].string
-                        //                        let ingredient4 = item["strIngredient4"].string
-                        
-                        
-                        if let isIngredientExist = item["strIngredient\(String(describing: index))"].string {
-                            self.ingredients.append(isIngredientExist)
-                            index! += 1
+
+                        for index in 1...15 {
+                            
+                            if item["strIngredient\(index)"].string != nil {
+                                self.ingredients.append(item["strIngredient\(index)"].stringValue)
+                            }
+                            
                         }
-                        
-                        if let isIngredientExist = item["strMeasure\(String(describing: index))"].string {
-                            self.measurements.append(isIngredientExist)
-                            index! += 1
-                        }
-                        
-                        //
-                        //                        self.ingredients.append(ingredient1!)
-                        //                        self.ingredients.append(ingredient2!)
-                        //                        self.ingredients.append(ingredient3!)
-                        //                        self.ingredients.append(ingredient4!)
-                        
-                        print("Ingredients" , self.ingredients)
                         
                         self.instruction = instructions
                         
@@ -103,30 +89,55 @@ class DetailVC: UIViewController {
                     i = i + 1
                 }
                 
+                self.updateTextView(type: 0)
+                print("Ingredients" , self.ingredients)
+                
             case .failure:
                 print("Error")
             }
         }
+        
+        
+    }
+    
+    func updateTextView(type: Int) {
+        
+        // 0 -> ingredients, 1 -> instruction
+        
+        if type == 0 {
+            
+            //ing
+            var tempIngredients = "Ingredients\n"
+            for item in ingredients {
+                tempIngredients += item + "\n"
+            }
+            
+            // mea
+            tempIngredients += "\n\nMeasuremnts\n"
+            for item in ingredients {
+                tempIngredients += item + "\n"
+            }
+            
+            // update label
+            textView.text = tempIngredients
+            
+        } else {
+            self.textView.text = "Prepare\n" + instruction!
+        }
+        
     }
     
     @IBAction func SegmentControlAction(_ sender: Any) {
         if self.segmentedControl.selectedSegmentIndex == 0 {
-
-            for cocktail in self.ingredients {
-                self.textView.text = cocktail
-            }
+            updateTextView(type: 0)
         } else {
-            self.textView.text = "Measurements \n"
-            for measure in self.measurements {
-                self.textView.text = measure
-            }
-            self.textView.text = "Prepare \n"
-            self.textView.text = instruction
+            updateTextView(type: 1)
         }
     }
     
     // MARK: Save Fav Cocktails to Core Data
     
     @IBAction func SaveCoreData(_ sender: Any) {
+        print("Ingredients" , self.ingredients)
     }
 }
