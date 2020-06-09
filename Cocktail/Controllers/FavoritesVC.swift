@@ -8,29 +8,49 @@
 
 import UIKit
 import CoreData
+import Alamofire
+import SwiftyJSON
+import Kingfisher
 
-class FavoritesVC: UIViewController {
+struct listCocktail {
+    let id: String!
+    let name: String!
+    let image: String!
+}
+
+class FavoritesVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
+    @IBOutlet weak var mCollectionView: UICollectionView!
+    @IBOutlet weak var table: UITableView!
     // MARK: Variables
     var ids = [Person]()
+    
+    var apiUrl = "https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i="
+    
+    var categoryTitle: String?
+    var listItem = [listCocktail]()
+    var names = [String]()
+    
     
     // MARK: viewDidLoad()
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+      
+        table.dataSource = self
+        table.delegate = self
 
-        
     }
+    
     
     // MARK: Fetch CoreData
     override func viewWillAppear(_ animated: Bool) {
         
         ids.removeAll()
-        dataAlAmk()
+        fetchtDataRequest()
         
     }
     
-    func dataAlAmk(){
+    func fetchtDataRequest(){
         
         //1
         let managedContext = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
@@ -40,18 +60,40 @@ class FavoritesVC: UIViewController {
         
         //3
         do {
+            
             let results = try managedContext.fetch(fetchRequest)
             ids = results as! [Person]
+            table.reloadData()
             
         } catch let error as NSError {
             print("Could not fetch \(error), \(error.userInfo)")
         }
-        
+        names.removeAll()
         for item in ids {
-            print("item: " + item.name!)
+            names.append(item.isim!)
+            
         }
-        
-        
+        table.reloadData()
     }
+
+    // MARK: UITableView
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return names.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        var cell = tableView.dequeueReusableCell(withIdentifier: "cell")
+        if cell == nil {
+            cell = UITableViewCell(style: .subtitle, reuseIdentifier: "cell")
+        }
+
+        cell?.textLabel?.text = names[indexPath.row]
+
+        return cell!
+    }
+    
+
+    
+   
     
 }

@@ -37,17 +37,18 @@ class DetailVC: UIViewController {
     var instruction: String?
     var index = 1
     var ids = [Person]()
-    
+    var names : [String] = []
     var audioPlayer: AVAudioPlayer!
     let soundArray = ["note1"]
     var selectedSoundFileName = ""
+    var selectedName = ""
     
     // MARK: viewDidLoad()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        dataAlAmk()
+        fetchtDataRequest()
         
         selectedUrl = apiURL + id!
         getDetailCoctail()
@@ -96,6 +97,8 @@ class DetailVC: UIViewController {
                         let image = item["strDrinkThumb"].string
                         let alcoholic = item["strAlcoholic"].string
                         let instructions = item["strInstructions"].string
+                        
+                        self.selectedName = name!
                         
                         for index in 1...15 {
                             
@@ -171,7 +174,7 @@ class DetailVC: UIViewController {
         }
     }
 
-    func dataAlAmk(){
+    func fetchtDataRequest(){
         
         //1
         let managedContext = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
@@ -211,8 +214,8 @@ class DetailVC: UIViewController {
     func saveNewItem(_ name: String) {
         
         let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
-        let newItem = Person.createInManagedObjectContext(context, name: name)
-        self.dataAlAmk()
+        let newItem = Person.createInManagedObjectContext(context, name: name, isim: selectedName)
+        self.fetchtDataRequest()
         saveData()
         
     }
