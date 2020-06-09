@@ -10,37 +10,48 @@ import UIKit
 import CoreData
 
 class FavoritesVC: UIViewController {
-
-    // MARK: Variables
     
-    var ids = [NSManagedObject]()
+    // MARK: Variables
+    var ids = [Person]()
     
     // MARK: viewDidLoad()
-    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
 
-        // Do any additional setup after loading the view.
-        print(ids)
+        
     }
     
     // MARK: Fetch CoreData
+    override func viewWillAppear(_ animated: Bool) {
+        
+        ids.removeAll()
+        dataAlAmk()
+        
+    }
     
-     override func viewWillAppear(_ animated: Bool) {
-         //1
-         let managedContext = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
-         
-         //2
-         let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Person")
-         
-         //3
-         do {
-             let results = try managedContext.fetch(fetchRequest)
-             ids = results as! [NSManagedObject]
-             
-         } catch let error as NSError {
-             print("Could not fetch \(error), \(error.userInfo)")
-         }
-     }
-
+    func dataAlAmk(){
+        
+        //1
+        let managedContext = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+        
+        //2
+        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Person")
+        
+        //3
+        do {
+            let results = try managedContext.fetch(fetchRequest)
+            ids = results as! [Person]
+            
+        } catch let error as NSError {
+            print("Could not fetch \(error), \(error.userInfo)")
+        }
+        
+        for item in ids {
+            print("item: " + item.name!)
+        }
+        
+        
+    }
+    
 }

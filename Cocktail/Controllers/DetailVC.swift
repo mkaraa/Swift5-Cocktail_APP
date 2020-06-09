@@ -11,6 +11,7 @@ import Alamofire
 import SwiftyJSON
 import Kingfisher
 import CoreData
+import AVFoundation
 
 class DetailVC: UIViewController {
     
@@ -22,6 +23,7 @@ class DetailVC: UIViewController {
     @IBOutlet weak var textView: UITextView!
     
     // fav ids
+    
     var people = [NSManagedObject]()
     
     var detailTitle: String?
@@ -34,15 +36,20 @@ class DetailVC: UIViewController {
     var ingredient: String?
     var instruction: String?
     var index = 1
+    var ids = [Person]()
     
+    var audioPlayer: AVAudioPlayer!
+    let soundArray = ["note1"]
+    var selectedSoundFileName = ""
     
     // MARK: viewDidLoad()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        selectedUrl = apiURL + id!
+        dataAlAmk()
         
+        selectedUrl = apiURL + id!
         getDetailCoctail()
         
         imageView.layer.cornerRadius = 25
@@ -55,12 +62,12 @@ class DetailVC: UIViewController {
         segmentedControl.setTitleTextAttributes([
             NSAttributedString.Key.font : UIFont(name: "BodoniSvtyTwoOSITCTT-Book", size: 15),
             NSAttributedString.Key.foregroundColor: UIColor.lightGray
-            ], for: .normal)
-
+        ], for: .normal)
+        
         segmentedControl.setTitleTextAttributes([
             NSAttributedString.Key.font : UIFont(name: "BodoniSvtyTwoOSITCTT-Book", size: 15),
             NSAttributedString.Key.foregroundColor: UIColor.orange
-            ], for: .selected)
+        ], for: .selected)
     }
     
     // MARK: GetDetailData
@@ -163,30 +170,111 @@ class DetailVC: UIViewController {
             updateTextView(type: 2)
         }
     }
+
+    func dataAlAmk(){
+        
+        //1
+        let managedContext = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+        
+        //2
+        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Person")
+        
+        //3
+        do {
+            let results = try managedContext.fetch(fetchRequest)
+            ids = results as! [Person]
+            
+        } catch let error as NSError {
+            print("Could not fetch \(error), \(error.userInfo)")
+            isFav = false
+        }
+        
+        for item in ids {
+            
+            if item.name == id {
+                isFav = true
+            }
+            
+        }
+        
+        if isFav! {
+            //favButton.image = UIImage(named: "star.fill")
+            print("bu zaten fav")
+        } else {
+            //favButton.image = UIImage(named: "star")
+            print("bu zaten degil")
+        }
+        
+    }
+    
+    // MARK: Core Data - Save
+    func saveNewItem(_ name: String) {
+        
+        let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+        let newItem = Person.createInManagedObjectContext(context, name: name)
+        self.dataAlAmk()
+        saveData()
+        
+    }
+    
+    // MARK: Core Data - Save
+    func saveData() {
+        
+        let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+        
+        do {
+            try context.save()
+            //favButton.image = UIImage(named: "star.fill")
+        } catch let error as NSError  {
+            Alert.showAlert(message: "Core Data is unavailable!", vc: self)
+            print("Could not save \(error), \(error.userInfo)")
+        }
+        
+    }
     
     // MARK: Save Fav Cocktails to Core Data
     
     @IBAction func SaveCoreData(_ sender: Any) {
-        //1
-        let managedContext = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
-        
-        //2 (Specifying the entity name and preparing to insert data into Core Data)
-        let entity =  NSEntityDescription.entity(forEntityName: "Person", in: managedContext)
-        let person = NSManagedObject(entity: entity!, insertInto: managedContext)
-        
-        //3 (inserting data into Core Data)
-        person.setValue(id, forKey: "name")
-        
-        //4
-        do {
-            // Saving the data in Core Data
-            try managedContext.save()
-            people.append(person)
-           print("\(id) Cocktail is added as favorite.")
-        } catch let error as NSError  {
-            print("Could not save \(error), \(error.userInfo)")
+
+        if isFav! {
+            deleteFavId(id: id!)
+        } else {
+            self.saveNewItem(id!)
+            
+            playSound()
+            Alert.showAlert(message: "This is your favorite cocktail.", vc: self)
+            print("\(id) Cocktail is added as favorite.")
+             
         }
+        
+    }
+    
+    func deleteFavId(id: String){
+        
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        let context = appDelegate.persistentContainer.viewContext
+        let request = NSFetchRequest<NSFetchRequestResult>(entityName: "Person")
+        
+        let result = try? context.fetch(request)
+        let resultData = result as! [Person]
+
+        for object in resultData {
+            if object.name == id {
+                context.delete(object)
+                //favButton.image = UIImage(named: "star.fill")
+            }
+        }
+        
+        saveData()
+
     }
     
     
+    func playSound() {
+        
+        let soundURL = Bundle.main.url(forResource: selectedSoundFileName, withExtension: "wav")
+        audioPlayer = try! AVAudioPlayer(contentsOf: soundURL!)
+        
+        audioPlayer.play()
+    }
 }
