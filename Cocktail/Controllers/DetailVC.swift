@@ -45,6 +45,22 @@ class DetailVC: UIViewController {
         
         getDetailCoctail()
         
+        imageView.layer.cornerRadius = 25
+        imageView.layer.borderWidth = 1
+        textView.layer.cornerRadius = 10
+        
+        segmentedControl.backgroundColor = .clear
+        segmentedControl.tintColor = .clear
+        
+        segmentedControl.setTitleTextAttributes([
+            NSAttributedString.Key.font : UIFont(name: "BodoniSvtyTwoOSITCTT-Book", size: 15),
+            NSAttributedString.Key.foregroundColor: UIColor.lightGray
+            ], for: .normal)
+
+        segmentedControl.setTitleTextAttributes([
+            NSAttributedString.Key.font : UIFont(name: "BodoniSvtyTwoOSITCTT-Book", size: 15),
+            NSAttributedString.Key.foregroundColor: UIColor.orange
+            ], for: .selected)
     }
     
     // MARK: GetDetailData
@@ -171,4 +187,6 @@ class DetailVC: UIViewController {
             print("Could not save \(error), \(error.userInfo)")
         }
     }
+    
+    
 }
